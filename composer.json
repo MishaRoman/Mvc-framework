@@ -1,0 +1,15 @@
+{
+    "name": "admin/framework",
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "authors": [
+        {
+            "name": "MishaR",
+            "email": "mesharoman12@gmail.com"
+        }
+    ],
+    "require": {}
+}
