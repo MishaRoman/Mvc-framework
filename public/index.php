@@ -7,10 +7,10 @@ use app\controllers\SiteController;
 
 $app = new Application();
 
-$app->get('/', [SiteController::class, 'home']);
+$app->router->get('/', [SiteController::class, 'home']);
 
-$app->get('/contact', [SiteController::class, 'contact']);
+$app->router->get('/contact', [SiteController::class, 'contact']);
 
-$app->post('/contact', [SiteController::class, 'handleContact']);
+$app->router->post('/contact', [SiteController::class, 'handleContact']);
 
 $app->run();
