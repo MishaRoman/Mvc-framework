@@ -4,7 +4,7 @@ namespace app\core;
 
 class Controller
 {
-	public string $layout;
+	public string $layout = 'layout';
 
 	public function render($view, $params = [])
 	{
