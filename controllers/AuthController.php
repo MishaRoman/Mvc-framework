@@ -23,7 +23,6 @@ class AuthController extends Controller
 			if ($user->validate() && $user->register()) {
 				return 'siccess';
 			}
-			var_dump($user->errors);
 			return $this->render('register', ['user' => $user]);
 		}
 		return $this->render('register', ['user' => $user]);
