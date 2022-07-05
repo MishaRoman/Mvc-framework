@@ -52,7 +52,7 @@ class Router
 		return str_replace('{{content}}', $viewContent, $layoutContent);
 	}
 
-	protected function layoutContent()
+	public function layoutContent()
 	{
 		$layout = Application::$app->controller->layout;
 		ob_start();
@@ -60,7 +60,7 @@ class Router
 		return ob_get_clean();
 	}
 
-	protected function renderOnlyView($view, $params)
+	public function renderOnlyView($view, $params)
 	{
 		foreach ($params as $key => $value) {
 			$$key = $value;
