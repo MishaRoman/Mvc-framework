@@ -18,10 +18,12 @@ class AuthController extends Controller
 	{
 		$this->setLayout('auth');
 		$user = new User();
+
 		if ($request->isPost()) {
 			$user->loadData($request->getBody());
-			if ($user->validate() && $user->register()) {
-				return 'siccess';
+
+			if ($user->validate() && $user->save()) {
+				return 'success';
 			}
 			return $this->render('register', ['user' => $user]);
 		}
