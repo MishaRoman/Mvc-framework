@@ -32,7 +32,7 @@ class Field
 			    </div> 
 			</div>
 		',
-			$this->attribute, // label
+			$this->model->getLabel($this->attribute), // label
 			$this->type, // type
 			$this->attribute, // name
 			$this->model->{$this->attribute}, // value
