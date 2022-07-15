@@ -1,12 +1,10 @@
+<?php 
+/** @var $model \app\models\User */
+?>
+
 <h1>Login</h1>
-<form action="" method="post">
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" class="form-control" name="email">
-  </div>
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" class="form-control" name="password">
-  </div>
+<?php $form = \app\core\form\Form::begin('', 'post') ?>
+  <?php echo $form->field($model, 'email') ?>
+  <?php echo $form->field($model, 'password')->passwordField() ?>
   <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+<?php \app\core\form\Form::end() ?>
