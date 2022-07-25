@@ -4,10 +4,11 @@ namespace app\core;
 
 class Application
 {
+	public string $layout = 'layout';
 	public Router $router;
 	public Request $request;
 	public Response $response;
-	public Controller $controller;
+	public ?Controller $controller = null;
 	public Database $db;
 	public Session $session;
 	public ?DbModel $user;
@@ -57,6 +58,13 @@ class Application
 
 	public function run()
 	{
-		echo $this->router->resolve();
+		try {
+			echo $this->router->resolve();
+		} catch (\Exception $e) {
+			$this->response->setStatusCode($e->getCode());
+			echo $this->router->renderView('_error', [
+				'exception' => $e
+			]);
+		}
 	}
 }
