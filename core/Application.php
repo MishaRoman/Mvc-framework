@@ -44,6 +44,11 @@ class Application
         return true;
     }
 
+    public static function isGuest()
+    {
+    	return !self::$app->user;
+    }
+
     public function logout()
     {
     	$this->user = null;

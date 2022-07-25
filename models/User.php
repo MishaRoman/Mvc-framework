@@ -63,4 +63,9 @@ class User extends DbModel
             'confirmPassword' => 'Password Confirm'
         ];
 	}
+
+	public function getDisplayName(): string
+	{
+		return $this->firstname . ' ' . $this->lastname;
+	}
 }
